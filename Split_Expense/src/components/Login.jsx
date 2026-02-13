@@ -28,10 +28,8 @@ export default function Login() {
   return (
     <div className="min-h-screen w-full bg-linear-to-br from-teal-500 to-green-600 flex items-center justify-center px-4">
       
-      {/* MAIN CONTAINER */}
       <div className="w-full max-w-6xl bg-white rounded-2xl shadow-xl overflow-hidden grid lg:grid-cols-2">
 
-        {/* LEFT FORM */}
         <div className="flex flex-col justify-center px-8 sm:px-14 lg:px-20 py-12">
           <h1 className="text-3xl font-bold text-gray-800">
             Split Expenses
@@ -81,14 +79,12 @@ export default function Login() {
             </button>
           </form>
 
-          {/* Divider */}
           <div className="flex items-center my-6">
             <div className="flex-grow border-t" />
             <span className="mx-3 text-gray-400 text-sm">OR</span>
             <div className="flex-grow border-t" />
           </div>
 
-          {/* Google Login */}
           <button className="w-full flex items-center justify-center gap-3 border py-3 rounded-lg hover:bg-gray-50 transition">
             <img
               src="https://www.svgrepo.com/show/475656/google-color.svg"
@@ -101,7 +97,6 @@ export default function Login() {
           </button>
         </div>
 
-        {/* RIGHT IMAGE */}
         <div className="hidden lg:flex items-center justify-center bg-gradient-to-br from-teal-500 to-green-600 p-10">
           <img
             src={images.finance2}
