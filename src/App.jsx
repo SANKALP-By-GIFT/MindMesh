@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+// import CreateGroup from "./components/CreateGroup";
+import AddPayment from "./pages/AddPayment";
+
+function App() {
+  return (
+    <div className="min-h-screen">
+      <AddPayment />
+    </div>
+  );
+}
+
+export default App;
+=======
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -33,3 +47,4 @@ function App() {
 }
 
 export default App
+>>>>>>> d623aa00bac3bc8b5e9e68300d445092cb775aff
