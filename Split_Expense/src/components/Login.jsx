@@ -1,7 +1,10 @@
 import { useState } from "react";
 import images from "../assets/Assets";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Login() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -22,7 +25,9 @@ export default function Login() {
 
     if (Object.keys(newErrors).length === 0) {
       console.log("Login success", formData);
+      
     }
+     navigate("/dashboard");
   };
 
   return (
@@ -72,6 +77,7 @@ export default function Login() {
             </div>
 
             <button
+              
               type="submit"
               className="w-full bg-teal-600 hover:bg-teal-700 text-white py-3 rounded-lg font-semibold transition"
             >
@@ -97,7 +103,7 @@ export default function Login() {
           </button>
         </div>
 
-        <div className="hidden lg:flex items-center justify-center bg-gradient-to-br from-teal-500 to-green-600 p-10">
+        <div className="hidden lg:flex items-center justify-center bg-gradient-to-br++++++++++++++++++++++++++++++ from-teal-500 to-green-600 p-10">
           <img
             src={images.finance2}
             alt="Split expenses illustration"
