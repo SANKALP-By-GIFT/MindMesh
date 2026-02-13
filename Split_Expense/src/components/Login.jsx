@@ -26,7 +26,7 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-teal-500 to-green-600 flex items-center justify-center px-4">
+    <div className="min-h-screen w-full bg-linear-to-br from-teal-500 to-green-600 flex items-center justify-center px-4">
       
       {/* MAIN CONTAINER */}
       <div className="w-full max-w-6xl bg-white rounded-2xl shadow-xl overflow-hidden grid lg:grid-cols-2">
