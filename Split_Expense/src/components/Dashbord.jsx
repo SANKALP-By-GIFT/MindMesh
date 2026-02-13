@@ -1,11 +1,14 @@
 import React from "react";
 import { FaPlus } from "react-icons/fa";
 import images from "../assets/Assets";
+import { useNavigate } from "react-router-dom";
+
 
 
 
 
 const Dashbord=()=>{
+    const navigate = useNavigate();
    return(
     <>
          <div className="min-h-screen bg-gray-100 flex flex-col justify-between items-center sm:px-6 md:px-10 py-8">
@@ -70,7 +73,7 @@ const Dashbord=()=>{
                            font-medium 
                            shadow-md 
                            hover:bg-teal-700 
-                           transition duration-300">
+                           transition duration-300" onClick={()=>{ navigate('/addparticipants')}}>
           <FaPlus />
           Create a new group
         </button>
