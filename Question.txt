@@ -1,0 +1,197 @@
+🧪 SDP Open Book Examination
+Project Option: Expense Splitter (Group Expense App) – Frontend Only
+
+Duration: 5 Hours (Development)
+Evaluation: 2:00 – 4:00 PM (Demo + GitHub Review)
+Difficulty Level: Medium → Moderate Advanced (MCA Level)
+Backend: ❌ Not Allowed (Frontend Only with Mock Data / Local Simulation)
+
+📌 Problem Statement
+
+Design and implement a Group Expense Splitter Application using React.
+
+The application must allow users to:
+
+Add shared expenses
+
+Split expenses among multiple group members
+
+Automatically calculate balances
+
+Display who owes whom
+
+Manage global state properly
+
+Persist data locally
+
+Apply performance optimization
+
+Implement reusable calculation logic via custom hooks
+
+This project evaluates:
+
+Algorithmic thinking
+
+Context-based state management
+
+Derived state calculation
+
+Performance optimization
+
+Clean component architecture
+
+🎯 SECTION A — CORE REQUIREMENTS (70 Marks)
+1️⃣ Group Setup & Dashboard (10 Marks)
+Functional Requirements
+
+Create a dashboard route:
+
+/dashboard
+
+
+Display:
+
+Total expenses
+
+Total paid per user
+
+Net balances
+
+Allow creation of group members (minimum 3 required).
+
+Each member must have:
+
+Name
+
+Unique ID
+
+2️⃣ Add Expense Feature (20 Marks)
+Functional Requirements
+
+User must be able to:
+
+Add new expense
+
+Select payer (who paid)
+
+Enter amount
+
+Select participants involved
+
+Add optional description
+
+Add date
+
+Example:
+
+Ravi paid ₹600 for dinner shared between Ravi, Aman, and Priya.
+
+Technical Requirements
+
+Use React Hook Form
+
+Validate:
+
+Amount > 0
+
+At least 1 participant selected
+
+Store expense in global state (Context)
+
+3️⃣ Split Calculation Logic (20 Marks)
+
+You must implement logic to:
+
+Split expense equally among selected participants
+
+Calculate:
+
+How much each person owes
+
+Net balance per user
+
+Who should pay whom
+
+Example Output:
+
+Aman owes Ravi ₹200
+Priya owes Ravi ₹200
+
+Important:
+
+Do NOT hardcode values.
+
+Calculation must update dynamically whenever:
+
+New expense added
+
+Expense edited
+
+Expense deleted
+
+4️⃣ Balance Summary View (10 Marks)
+
+Display:
+
+List of all users
+
+Total paid
+
+Total owed
+
+Net balance:
+
+Positive → To receive
+
+Negative → To pay
+
+Highlight:
+
+Positive balances (green)
+
+Negative balances (red)
+
+5️⃣ Context-Based State Management (10 Marks)
+
+You must create:
+
+ExpenseContext
+
+useExpenses() custom hook
+
+Context must manage:
+
+Members list
+
+Expenses list
+
+Add / Edit / Delete expense functions
+
+Explain in comments:
+
+Why Context is sufficient
+
+When Redux would be more appropriate
+
+6️⃣ Custom Calculation Hook (10 Marks)
+
+Create a reusable hook:
+
+useBalanceCalculator()
+
+
+This hook must:
+
+Accept expenses + members
+
+Return:
+
+Per-user totals
+
+Net balances
+
+Settlement summary
+
+Logic must NOT remain inside component.
+
+Separation of logic = higher marks.
