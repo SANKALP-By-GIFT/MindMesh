@@ -1,50 +1,67 @@
-<<<<<<< HEAD
-// import CreateGroup from "./components/CreateGroup";
-import AddPayment from "./pages/AddPayment";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { ExpenseProvider } from "./context/ExpenseContext";
+import { AuthProvider } from "./context/AuthContext";
+import ProtectedRoute from "./components/layout/ProtectedRoute";
+
+import Login from "./pages/Login";
+import DashboardHome from "./pages/Dashboard";
+import MembersPage from "./pages/MembersPage";
+import ExpensesPage from "./pages/ExpensesPage";
+import CreateGroup from "./pages/CreateGroup";
+
+
 
 function App() {
   return (
-    <div className="min-h-screen">
-      <AddPayment />
-    </div>
+    <AuthProvider>
+      <ExpenseProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+
+            <Route
+              path="/dashboard"
+              element={
+                <ProtectedRoute>
+                  <DashboardHome />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/members"
+              element={
+                <ProtectedRoute>
+                  <MembersPage />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/expenses"
+              element={
+                <ProtectedRoute>
+                  <ExpensesPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+  path="/create-group"
+  element={
+    <ProtectedRoute>
+      <CreateGroup />
+    </ProtectedRoute>
+  }
+/>
+
+
+
+            <Route path="*" element={<Navigate to="/login" />} />
+          </Routes>
+        </BrowserRouter>
+      </ExpenseProvider>
+    </AuthProvider>
   );
 }
 
 export default App;
-=======
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
-
-export default App
->>>>>>> d623aa00bac3bc8b5e9e68300d445092cb775aff
